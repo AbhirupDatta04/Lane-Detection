@@ -22,6 +22,8 @@ def roi(img,v):
 
 
 crop=roi(img,np.array([roi_v],np.int32),)
+grayimg=cv2.cvtColor(crop,cv2.COLOR_RGB2GRAY)
+canimg=cv2.Canny(grayimg,100,200)
 
-plt.imshow(crop)
+plt.imshow(canimg)
 plt.show() 
